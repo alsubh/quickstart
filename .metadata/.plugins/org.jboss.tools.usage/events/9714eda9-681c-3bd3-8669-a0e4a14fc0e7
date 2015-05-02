@@ -1,0 +1,11 @@
+#Fri May 01 20:27:15 MDT 2015
+vl=How many times the 'Finish' button pressed during the day
+l=Wizard class name
+ct=jbt
+d=1430533635367
+c=0
+cmp=usage
+a=finishWizard
+cl=org.jboss.tools.maven.ui.wizard.ConfigureMavenRepositoriesWizard
+v=2.0.2
+s=2

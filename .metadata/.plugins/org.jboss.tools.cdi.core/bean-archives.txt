@@ -1,0 +1,12 @@
+path=C:\Users\AnasR\.m2\repository\javax\validation\validation-api\1.0.0.GA-redhat-3\validation-api-1.0.0.GA-redhat-3.jar
+size=48860
+archive=0
+path=C:\Users\AnasR\.m2\repository\javax\enterprise\cdi-api\1.0.0.SP4-redhat-5\cdi-api-1.0.0.SP4-redhat-5.jar
+size=53291
+archive=0
+path=C:\Users\AnasR\.m2\repository\javax\inject\javax.inject\1.0.0.redhat-5\javax.inject-1.0.0.redhat-5.jar
+size=5757
+archive=0
+path=C:\Users\AnasR\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.1_spec\1.0.1.Final-redhat-3\jboss-transaction-api_1.1_spec-1.0.1.Final-redhat-3.jar
+size=25635
+archive=0
