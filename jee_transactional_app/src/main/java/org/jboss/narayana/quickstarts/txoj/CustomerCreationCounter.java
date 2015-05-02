@@ -48,8 +48,10 @@ public class CustomerCreationCounter extends LockManager {
 	 * @throws Exception
 	 */
 	public void incr(int value) throws Exception {
+		System.out.println( "Lock Uid Before" + get_uid());
 		if (setlock(new Lock(LockMode.WRITE), 0) == LockResult.GRANTED) {
 			state += value;
+			System.out.println( "Lock Uid After" + get_uid());
 		} else {
 			throw new Exception("Error - could not set write lock.");
 		}
@@ -62,7 +64,9 @@ public class CustomerCreationCounter extends LockManager {
 	 * @throws Exception
 	 */
 	public int get() throws Exception {
+		System.out.println( "Lock Uid Before" + get_uid());
 		if (setlock(new Lock(LockMode.READ), 0) == LockResult.GRANTED) {
+			System.out.println( "Lock Uid After" + get_uid());
 			return state;
 		} else {
 			throw new Exception("Error - could not set read lock.");

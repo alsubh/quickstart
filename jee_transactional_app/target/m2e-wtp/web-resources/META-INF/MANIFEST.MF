@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Built-By: AnasR
-Build-Jdk: 1.8.0_45
+Built-By: Anaass
+Build-Jdk: 1.7.0_80
 Created-By: Maven Integration for Eclipse
 Dependencies: org.jboss.jts
 

@@ -31,11 +31,16 @@ import javax.transaction.HeuristicRollbackException;
 import javax.transaction.NotSupportedException;
 import javax.transaction.RollbackException;
 import javax.transaction.SystemException;
+import javax.transaction.Transaction;
 import javax.transaction.UserTransaction;
+import javax.transaction.xa.Xid;
 
 import org.jboss.logging.Logger;
 import org.jboss.narayana.quickstarts.ejb.CustomerManagerEJB;
 import org.jboss.narayana.quickstarts.jpa.Customer;
+
+import com.arjuna.ats.arjuna.common.Uid;
+import com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple;
 
 @Named("customerManager")
 @RequestScoped
@@ -61,6 +66,17 @@ public class CustomerManagerManagedBean implements CustomerManager {
 		logger.debug("Adding customer: " + name);
 		try {
 			userTransaction.begin();
+			
+			Transaction transaction = TransactionImple.getTransaction();
+			int status = TransactionImple.getTransaction().getStatus();
+			int timeout = TransactionImple.getTransaction().getTimeout();
+			Uid uid = TransactionImple.getTransaction().get_uid();
+			Xid xid = TransactionImple.getTransaction().getTxId();
+			
+			System.out.println("Transaction is " + transaction.toString());
+			System.out.println("Tid =" + xid + "Uid = " + uid);
+			System.out.println("Transaction Status " + status + "\n Transaction Timeout = " + timeout);
+			
 			logger.debug("Creating customer");
 			customerManagerEJB.createCustomer(name);
 			userTransaction.commit();

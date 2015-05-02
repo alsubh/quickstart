@@ -55,6 +55,10 @@ public class CustomerManagerEJBImpl implements CustomerManagerEJB {
 		logger.debug("createCustomer transaction is identified as: "
 				+ new InitialContext().lookup("java:comp/UserTransaction")
 						.toString());
+		
+		System.out.println("createCustomer transaction is identified as: "
+				+ new InitialContext().lookup("java:comp/UserTransaction")
+						.toString());
 
 		// Can do this first because if there is a duplicate it will be rolled
 		// back for us
@@ -76,6 +80,10 @@ public class CustomerManagerEJBImpl implements CustomerManagerEJB {
 		logger.debug("listCustomers transaction is identified as: "
 				+ new InitialContext().lookup("java:comp/UserTransaction")
 						.toString());
+		
+		System.out.println("listCustomers transaction is identified as: "
+				+ new InitialContext().lookup("java:comp/UserTransaction")
+						.toString());
 		return entityManager.createQuery("select c from Customer c")
 				.getResultList();
 	}
@@ -85,6 +93,10 @@ public class CustomerManagerEJBImpl implements CustomerManagerEJB {
 		logger.debug("getCustomerCount transaction is identified as: "
 				+ new InitialContext().lookup("java:comp/UserTransaction")
 						.toString());
+		System.out.println("getCustomerCount transaction is identified as: "
+				+ new InitialContext().lookup("java:comp/UserTransaction")
+						.toString());
+		
 		return customerCreationCounter.get();
 	}
 }
