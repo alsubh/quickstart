@@ -79,7 +79,9 @@ public class CustomerManagerManagedBean implements CustomerManager {
 			
 			logger.debug("Creating customer");
 			customerManagerEJB.createCustomer(name);
+			
 			userTransaction.commit();
+			
 			logger.debug("Created customer");
 			return "customerAdded";
 		} catch (Exception e) {
